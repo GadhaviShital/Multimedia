@@ -1,0 +1,204 @@
+<!DOCTYPE HTML>
+
+<html>
+
+	<!-- Begin head -->
+	<head lang="en-US"><!-- insert lang attribute in head tag -->
+
+		<meta charset="UTF-8"                             />
+		<!-- meta description information goes here      -->
+		<meta name ="description" content = "CS597 Homework 2.3  "/>
+		<!-- meta keywords information goes here         -->
+		<meta name = "keywords" content="Personal Web Site, Contact me"/>
+		<!-- meta author information goes here           -->
+		<meta name = "author" content ="Shital Gadhavi"/>
+		<meta name="DC.date" description="2017-01-18"     />
+	
+		<title>Contact Me 2017 -Shital Gadhavi</title>
+		
+		<!--  Specify CSS attribute selectors -->
+		<link rel="stylesheet" type="text/css" href="assets/styles/selectors.css"/>
+		<link rel="stylesheet" type="text/css" href="assets/styles/form-styles.css"/>
+		<link rel="stylesheet" type="text/css" href="assets/styles/colors.css"/>
+		<link rel="stylesheet" type="text/css" href="assets/styles/main-styles.css"/>
+		<link rel="stylesheet" type="text/css" href="assets/styles/social-buttons.css"/>
+		<link rel="stylesheet" type="text/css" href="assets/styles/table-styles.css"/>
+		
+		<!-- 8. Specify google fonts - Libre Baskerville and Libre Franklin -->
+		<!--    see https://www.typewolf.com/blog/google-fonts-combinations -->
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville|Libre+Franklin"/ >
+		
+		<!-- 9. Specify heading and paragraph font styles -->
+		<style type="text/css">
+			h1, h2, h3, h4 { font-family : 'Libre Franklin', sans-serif; } /* 9a Libre Franklin */
+			p              { font-family : 'Libre Baskerville', serif;   }    /* 9b Libre Baskerville */
+		</style>
+		
+		<!-- Link to master style sheet goes here         -->
+		<!-- Internal styles go here                      -->
+		<!-- Link to JavaScript or jQuery goes here       -->
+		<!-- Internal JavaScript or jQuery code goes here -->
+	
+	</head><!-- end head -->
+
+	<!-- Begin body -->
+	<body id="contact_me">
+		<div>
+			<!-- Begin header -->
+			<header>
+
+				<!-- Main header                -->
+				<div class="hgroup">
+					<h1>Contact Me</h1>
+					<h2>Shital Gadhavi</h2>
+				</div>
+				<!-- Main navigation list -->
+				<nav>
+					<ul>
+						<li><a href="index.html" class="home_page">Home Page </a></li>
+						<li><a href="about_me.html" class="about_me" >About Me </a></li>
+						<li><a href="my_courses.html" class="my_courses">My Courses</a></li>
+						<li><a href="contact_me.html" class="contact_me">Contact Me</a></li>
+					</ul>
+				</nav><!-- end nav -->
+			
+			</header><!-- end header -->
+		
+			<!-- Main section -->
+			<main id="container">
+		
+				<section>
+		
+					<h3>Order Details</h3>
+			
+					<p>Please complete the information below, 
+					   and click the "Submit Information" button when you are done.</p>
+		
+					<form
+						name    = "order_form"
+						enctype = "text?plain"
+						method  = "POST"
+						action  = "mailto://sgadhavi@rivier.edu?subject=Order Details">
+							
+						<!-- Begin fieldset here -->
+						<fieldset>
+							<!-- Put legend with contact information here -->
+							
+							<legend>Contact Information</legend>	
+							
+							<!-- Labeled name text input, break after -->
+							<label for ="name"><span>Name:</span>
+								<input type="text" id="name" name="name" size="30" autofocus required/>
+							</label>
+							<br/>
+							<!-- Labeled address text input, break after -->
+							<label for ="address"><span>Address:</span>
+								<input type="text" id="address" name="address" size="30" required/>
+							</label>
+							<br/>
+							<!-- Labeled city text input, no break after -->
+							<label for ="city"><span>City:</span>
+								<input type="text" id="city" name="city" size="30"  required/>
+							</label>
+							<br/>
+							<!-- Labeled state text input, no break after -->
+							<label for ="state"><span>State:</span>
+								<input type="text" id="state" name="state" size="30" placeholder="NH"  required/>
+							</label>
+							</br>
+							<!-- Labeled postal code text input, break after -->
+							<label for ="postal_code"><span>Postal Code:</span>
+								<input type="text" id="postal_code" name="postal_code" size="5" placeholder="#####"  pattern="\d{5}" required/>
+							</label>
+							</br>
+							<!-- Labeled telephone tel input, break after -->
+							<label for ="state"><span>Telephone:</span>
+								<input type="text" id="telephone" name="state" size="30" required/>
+							</label>
+							</br>
+							<!-- Labeled email email input, break after -->
+							<label for ="state"><span>Email:</span>
+								<input type="text" id="state" name="state" size="30"  required/>
+							</label>
+						
+						</fieldset>	
+						<!-- end fieldset here -->
+						
+						<fieldset>
+						<!-- begin a new fieldset here -->
+						
+							<!-- Put legend with Product Details here -->
+							<legend>Product Details</legend>	
+							
+							<!-- Labeled color color input, break after -->
+							<label for ="color"><span>Color:</span>
+								<input type="text" id="color" name="color" size="30" required/>
+							</label>
+							<br/>
+							<!-- Select size list with S for Small, M for Medium,
+								 L for Large, and XL for Extra-Large with Medium selected -->
+							<label for ="size"><span>Size:</span>
+								<select type="select" id="size" name="size" required>
+									<option value="S">Small</option>
+									<option value="M" selected>Medium</option>
+									<option value="L">Large</option>
+									<option value="XL">Extra-Large</option>								
+								</select>
+							</label>
+							<br/>     
+							<!-- Labeled Radio buttons for gift wrapping Yes or No, 
+								 with Yes checked -->
+							<label><span>Gift wrapping:</span>
+								<label for="giftwrapyes">	
+									<span>Yes</span>
+									<input type="radio" id="giftwrapyes" name="giftwrap">			
+									</input>
+								</label>
+								<label for="giftwrapno">
+									<span>No</span>
+									<input type="radio" id="giftwrapno" name="giftwrap">			
+									</input>
+								</label>
+							</label>
+							<br/>     
+							<!-- Labeled textarea for Shipping Details.
+								 Set placeholder to say "Any special shipping instructions?"  -->
+							<label for ="shippingdetails"><span>Shipping Details:</span>
+								<textarea id="shippingdetails" name="shippingdetails" placeholder="Any special shipping instructions?"></textarea>
+							</label>
+							<br/>     
+						<!-- end fieldset here -->
+						</fieldset>
+						
+						<!-- Labeled checkbox with subscribe as default -->
+						<label for ="subscribe"><span>Subscribe:</span>
+							<input id="subscribe" name="subscribe" type="checkbox" checked></input>
+						</label>
+						</br>
+						
+						<!-- Hidden input field with course name Term Year and Section -->
+						<input type="hidden" name="hidden_text" value="CS597 SP17 AH1"/>
+						<!-- Submit Information button -->
+						<input type ="submit" value="Submit"/>	
+					
+						<!-- Reset Fields button -->
+						<input type ="reset" value="Reset"/>		
+					</form><!-- end form -->
+							
+				</section><!-- end order details -->
+
+				<!-- NO ASIDE -->
+										
+			</main><!-- end main -->
+		
+			<!-- Begin footer -->
+			<footer>
+		
+				<h3>Copyright &copy; 2017 <a href= "mailto://sgadhavi@rivier.edu">sgadhavi@rivier.edu</a></h3>
+				<h4>CS597 Multimedia and Web Development <span>SP17 AH1</span></h4>
+			
+			</footer><!-- end footer -->
+		</div>
+	</body><!-- end body -->
+
+</html>

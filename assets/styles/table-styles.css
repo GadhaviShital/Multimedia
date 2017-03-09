@@ -1,0 +1,60 @@
+/**********************************************************/
+/* File:    table-styles.css                              */
+/* Course:  CS597 Multimedia and Web Development SP17 AH1 */
+/* History: 2016-01-04 Created by Course Instructor       */
+/*          2017-01-31 Modified by Shital Gadhavi      */
+/**********************************************************/
+
+table, th, td {
+	border-width     : 1px;
+	border-style     : solid;
+	border-color     : var(--color-g); /* Specify native variable color gray */
+	}
+table {
+	border-collapse  : collapse;
+	}
+caption {
+	font-size         : 1.5em;
+	padding           : .5em 0;
+	}
+thead th, 
+tfoot {
+	background-color  : var(--color-4); /* Specify native variable color 4 */
+	color             : var(--color-2); /* Specify native variable color 2 */
+	padding           : 5px;
+	}
+tbody th,
+tbody td {
+	padding           : 5px;
+	text-align        : left;
+	vertical-align    : top;
+	}
+	
+/* Highlight every other row */
+tr:nth-child(even) {
+	background-color  : var(--color-1); /* Specify native variable color 1 */
+	color             : #CCC;
+	}
+	
+/* Make Course Name BOLD */
+tr td:nth-child(5) {
+	font-weight       : bold;
+	}
+	
+/* Make Grade column centered and bold */
+tr td:last-child {
+	text-align        : center;
+	font-weight       : bold;
+	}
+	
+/* Left-align footer colspan */
+tfoot th {
+	padding           : 5px;
+	text-align        : left;
+	vertical-align    : top;
+}
+
+/* Center footer last-column */
+tfoot td {
+	text-align        : center;
+}

@@ -1,0 +1,426 @@
+<!DOCTYPE HTML>
+
+<html>
+
+	<!-- Begin head -->
+	<head lang="en-US"><!-- insert lang attribute in head tag -->
+		
+
+		<meta charset="UTF-8"                             />
+		<!-- meta description information goes here      -->
+		<meta name ="description" content = "CS597 Homework 2.1  "/>
+		<!-- meta keywords information goes here         -->
+		<meta name = "keywords" content="Personal Web Site"/>
+		<!-- meta author information goes here           -->
+		<meta name = "author" content ="Shital Gadhavi"/>
+		<meta name="DC.date" description="2017-01-18"     />
+	
+		<title>Welcome 2017 - Shital Gadhavi</title>
+		
+		<!-- Link to style sheet goes here      -->
+		<!--  Specify CSS attribute selectors -->
+		<link rel="stylesheet" type="text/css" href="assets/styles/selectors.css"/>
+		<link rel="stylesheet" type="text/css" href="assets/styles/colors.css"/>
+		<link rel="stylesheet" type="text/css" href="assets/styles/main-styles.css"/>
+		<link rel="stylesheet" type="text/css" href="assets/styles/social-buttons.css"/>
+		
+		
+		<!-- 8. Specify google fonts - Libre Baskerville and Libre Franklin -->
+		<!-- see https://www.typewolf.com/blog/google-fonts-combinations -->
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville|Libre+Franklin"/ >
+		
+		
+		<!-- Internal styles go here                      -->
+		
+		<!-- 9. Specify heading and paragraph font styles -->
+		<style type="text/css">
+			
+			@media screen {
+				h1, h2, h3, h4 { font-family : 'Libre Franklin', sans-serif; }
+				header h3      { display     : none;                         } 
+				p              { font-family : 'Libre Baskerville', serif;   }
+				}
+			@media print {
+				header h3      {text-align       : center; }
+				figcaption     {background-color : var(--color-w); }
+			}
+			@media screen and (max-width : 768px) {
+				
+				body {
+					width         : 100%;
+					display       : flex;
+					height        : 100%;
+				}
+				#content {
+					flex           : 1;
+					flex-direction : column ;
+					}
+				img{
+					width			: 40%;
+					height			: 40%;
+				}
+					
+				header {
+					height         : 90px;
+					}
+				main {
+					flex           : 1;
+					}
+				article {
+					color          : black;
+					}
+				article h2, article h3 {
+					text-align     : center;
+					}
+				nav, aside {
+					flex           : 1 1 12em;
+					}
+				nav {
+					margin-top     : 70px;
+					}	
+				
+			}
+			@media screen and (max-width :640px) {
+				
+				header #hgroup {
+					flex-direction : column;
+					}
+				img {
+					width			: 40%;
+					height			: 40%;
+				}	
+				section { 
+					width          : 100%;
+					}
+				h1, h2, h3 {
+					text-align     : center;
+					margin         : 4px auto;
+					}
+				nav{
+					display        : none;
+					}
+				footer h4 {
+					display 		: none;
+				}				
+				.article-contents {
+					flex-direction : column;
+					
+					}
+				figure {
+					text-align     : center;
+					}
+				
+			}
+			@media print and (max-width : 768px) {
+				
+				body {
+					width         : 100%;
+					display       : flex;
+					height        : 100%;
+				}
+				#content {
+					flex           : 1;
+					flex-direction : column ;
+					}
+				img{
+					width			: 40%;
+					height			: 40%;
+				}
+					
+				header {
+					height         : 90px;
+					}
+				main {
+					flex           : 1;
+					}
+				article {
+					color          : black;
+					}
+				article h2, article h3 {
+					text-align     : center;
+					}
+				nav, aside {
+					flex           : 1 1 12em;
+					}
+				nav {
+					margin-top     : 70px;
+					}	
+				
+			}
+			@media print and (max-width :640px) {
+				
+				header #hgroup {
+					flex-direction : column;
+					}
+				img {
+					width			: 40%;
+					height			: 40%;
+				}	
+				section { 
+					width          : 100%;
+					}
+				h1, h2, h3 {
+					text-align     : center;
+					margin         : 4px auto;
+					}
+				nav{
+					display        : none;
+					}
+				footer h4 {
+					display 		: none;
+				}				
+				.article-contents {
+					flex-direction : column;
+					
+					}
+				figure {
+					text-align     : center;
+					}
+				
+			}
+					
+			/* Put any internal styles goes here */
+			
+			/*CSS for vision paragraph*/
+			#more_vision,
+			#close_vision {
+				color  : red;
+				cursor : pointer;
+				cursor : hand;
+			}
+			/*nitical vision paragraph display is none(hidden)*/
+			#vision {
+				display : none;
+			}
+			
+			/*CSS for goals paragraph*/
+			#more_goals,
+			#close_goals {
+				color  : red;
+				cursor : pointer;
+				cursor : hand;
+			}
+			/*initial goal paragraph display is none(hidden)*/
+			#goals {
+				display : none;
+			}
+			
+			/*CSS for info paragraph*/
+			#more_info,
+			#close_info {
+				color  : red;
+				cursor : pointer;
+				cursor : hand;
+			}
+			
+			/*initial info paragraph display is none(hidden)*/
+			#info {
+				display : none;
+			}
+		</style>
+		
+		<!-- Link to JavaScript or jQuery goes here       -->
+		<!-- Put link to jQuery library here   -->
+		<script src="assets/scripts/jquery-1.12.3.min.js"></script>
+		
+		<!--  Put any internal jQuery code here -->
+		<script>
+			//we can write only one document.ready function and
+			//add all slideup and slidedown logic there instead of adding three function.
+		
+			//document.ready function for vision
+			//this function will be called when page is ready for display
+			$(document).ready(function() {
+			
+				//on click on #more_vision #vision div is displayed with animation as slide.
+				$("#more_vision").click(function(){
+					$("#vision").slideDown();
+				});
+				
+				//on click on #close_vision #vision div is hidden with animation as slide.
+				$("#close_vision").click(function() {
+					$("#vision" ).slideUp();
+				});
+			});
+			
+			//document.ready function for goals
+			//this function will be called when page is ready for display
+			$(document).ready(function(){
+			
+				$("#more_goals").click(function(){
+					$("#goals").slideDown();
+				});
+				
+				$("#close_goals").click(function(){
+					$("#goals").slideUp();
+				});	
+			});
+			
+			//document.ready function for info
+			//this function will be called when page is ready for display
+			$(document).ready(function(){
+			
+				$("#more_info").click(function(){
+					$("#info").slideDown();
+				});
+				
+				$("#close_info").click(function(){
+					$("#info").slideUp();
+				});	
+			});
+		
+		</script>
+	
+		
+	</head><!-- end head -->
+
+	<!-- Begin body -->
+	<body id="home_page">
+		<div id="container">
+			<!-- Begin header -->
+			<header>
+
+				<!-- Main header                -->
+				<div class="hgroup">
+					<h1>Home page</h1>
+					<h2>Shital Gadhavi</h2>
+				</div>
+				<!-- Main navigation list -->
+				<nav>
+					<ul>
+						<li><a href="index.html" class="home_page">Home Page </a></li>
+						<li><a href="about_me.html" class="about_me" >About Me </a></li>
+						<li><a href="my_courses.html" class="my_courses">My Courses</a></li>
+						<li><a href="contact_me.html" class="contact_me">Contact Me</a></li>
+					</ul>
+				</nav><!-- end nav -->
+			
+			</header><!-- end header -->
+		
+			<!-- Main begin -->
+			<main id="container">
+			
+				<!-- Content section begin -->
+				<section>
+
+					<!-- Section header - level h3 -->
+					<h3>Welcome to my Web Site</h3>
+		
+					<article>
+		
+						<!-- Placeholder for your picture to be inserted later -->
+						<figure>
+							<img src="assets/media/images/Shital.jpg"
+								 width="150" height="150"/>
+							<figcaption>Shital Gadhavi</figcaption>
+						</figure>
+					
+						<!-- Put a big paragraph here about who you are and 
+							 your personal info for your future. -->
+							<p><em>Shital Gadhavi </em>is pursuing Master of Science in Computer Science from Rivier 
+							University,Nashua, New Hampshire.She is an ambitious, determined and committed graduate with 
+							high ethics and the best team player.
+							
+								<!-- Add More -->
+								<br /><strong>More&nbsp;<span id="more_info">&raquo;</span></strong>
+							</p>
+							<!-- info div that will be diplay of hidden on more and close -->
+							<div id = "info">
+								<p>She is seeking a challenging career with progressive 
+								organization that provide an opportunity to capitalize her technical skills and abilities in 
+								the field of Software Development, Web development, Databases & Bigdata technology. 
+								She is currently developing IT solution for a startup company and web-based application 
+								for academic projects.She likes to read and learn the new concepts.
+								She is the quick learner and the smart worker who always tries to achieve best.
+								She tends to work hard until she gets the desired result. Her favorite subjects include Object
+								Oriented Design, Java Programming, Professional Seminar, Database Management Systems, 
+								Multimedia Web Development, Software Engineering, Big data and Data mining.
+								Shital  has created several programs using different frameworks.Her focus is to produce
+								high quality codes.<br/> She has good knowledge and hands on experience in <strong>Java,
+								JavaScript, JSON, XML, HTML, CSS, SQL, PL/SQL, Bootstrap, AngularJS</strong><br/>
+								Java Technologies such as <strong> Java Beans, JDBC, JNDI, AJAX, JSP Swing, Spring, Hibernate,
+								GWT, JavaFX </strong><br/>and Web Services such as <strong>SOAP, RESTful services.</strong>
+								<!-- Add Close -->
+								<br/><strong>Close&nbsp;<span id="close_info">&laquo;</span></strong>
+								</p>	
+							<!--end div # info -->
+							</div>
+								
+							<p><strong>My vision: </strong></p>
+							<p>My vision is to be an honest, empathetic and impactful software developer and to be recognized 
+							within my company.
+							
+							<!-- Add More -->
+							<br /><strong>More&nbsp;<span id="more_vision">&raquo;</span></strong>
+							</p> 
+							
+							<!-- Wrap in div -->
+							<div id = "vision">
+							
+								<p>I am committed to improving myself personally and professionally and to express 
+								my dedication to love and cherish my family and friends who enriched my life and helped me to make
+								it meaningful. I would like to apply ethical principles to make a significant difference.I want to 
+								see myself growing each day of my life. I want to wake up every morning embracing the surroundings
+								and motive of hunger for success.I am a sports broadcaster who has reached the peak of her ambition
+								and is ready to move on and use the skills she has received to inspire the world. 
+								
+									<!-- Add Close -->
+									<br/><strong>Close&nbsp;<span id="close_vision">&laquo;</span></strong>
+								</p> 	
+								<!--end div # vision -->
+							</div>
+						
+						<!-- Enclose a personal quote here in a paired blockquote tag -->
+							<blockquote cite="https://www.brainyquote.com/quotes/quotes/p/pele737774.html?src=t_success">
+							<em><b>"Success is no accident. It is hard work, perseverance, learning, studying, sacrifice and 
+								most of all, love of what you are doing or learning to do."<br/> Pele</b></em>
+							</blockquote>
+						
+						
+					
+						<!-- Put a brief paragraph here about how you will achieve your 
+							 goals. -->
+							<p><strong> Future Goals</strong></p>
+							<p>I am working towards my long-term goals by breaking them into shorter goals.
+							I have learned that long-term goals can be achieved by breaking it into small goals.
+							
+								<!-- Add More -->
+								<br /><strong>More&nbsp;<span id="more_goals">&raquo;</span></strong>
+							</p> 
+						
+							<!-- Wrap in div -->
+							<div id = "goals">
+								<p>My short-term goal is to pursue my graduation with higher grade and successfully pass <strong>Oracle Certified Professional Java SE 7 Programmer certification.</strong>
+								To achieve higher grades in courses,I read and learn the topics of the courses.For the <strong>Oracle Certified Professional Java SE 7 Programmer certification,</strong>
+								I read the book and prctice the java programs as much as I can do.
+								I want to find a position where I can contribute as much of value as I can with my skills and
+								outstanding performance.I want to see myself growing continuously personally and professionally.
+								My long-term aim is to expertise in the technologies, make a company progress.I would like to 
+								become a subject matter expert in an area of greatest need within my role. eventually,I would 
+								like to become a lead and mentor to help others developing in their respective roles.
+								
+								<!-- Add Close -->
+								<br/><strong>Close&nbsp;<span id="close_goals">&laquo;<span></strong>
+								</p>
+								<!--end div # goals -->
+							</div>
+					</article>
+					
+				</section>
+				
+				<!-- NO ASIDE ON HOME PAGE -->
+		
+			</main><!-- end main -->
+			
+			<!-- Begin footer -->
+			<footer>
+		
+				<h4>Copyright &copy; 2017 <a href="mailto://sgadhavi@rivier.edu">sgadhavi@rivier.edu</a></h4>
+			
+				<h5>CS597 Multimedia and Web Development <span>SP17 AH1</span></h5>
+			
+			</footer><!-- end footer -->
+		</div>
+	</body><!-- end body -->
+
+</html>

@@ -1,0 +1,229 @@
+/**********************************************************/
+/* File:    homework31-styles.css                         */
+/* Course:  CS597 Multimedia and Web Development SP17 AH1 */
+/* Author:  Shital Gadhavi                          */
+/* History: 2016-01-04 Created by Course Instructor       */
+/*          2017-01-30 Modified by Shital Gadhavi         */
+/**********************************************************/
+
+/**********************************************************/
+/* PART 1 - LAYOUT                                        */
+/**********************************************************/
+
+/**********************************************************/
+/* HTML 5 specific                                        */
+/**********************************************************/
+
+header,main,section,article,aside,footer {
+	display          : block;
+	vertical-align	 :top; 
+	padding 		 : 0 10px; 
+	}
+	
+/**********************************************************/
+/* 1.1 Specify main body size and font                    */
+/**********************************************************/
+
+body {
+	width            : 960px;/* 1.1.1 960 pixels wide */
+	margin           : 10px auto;/* 1.1.2 Top 10 pixels, left-right auto */
+	font-size		 : 10pt;
+	font-family		 : sans-serif;
+	line-height		 : 1.5em; /* 1.1.3 10 points with 1.5em leading. sans-serif families */
+	}
+	
+/**********************************************************/
+/* 1.2 Specify outer container layout                     */
+/**********************************************************/
+#page {
+	display          : flex;
+	flex-direction   : column; /* 1.2.1 top-to-bottom */
+	}
+	
+/**********************************************************/
+/* 1.3 Specify header layout                              */
+/**********************************************************/
+header {
+	width            : 100%;
+	margin           : 0 auto;
+	padding          : 0;
+	display          : flex;
+	flex-direction   : column;/* 1.3.1 top-to-bottom */
+	justify-content  : space-between;
+	}
+header .hgroup {
+	padding          : 0 10px;
+	display          : flex;
+	flex-direction   : row;/* 1.3.2 left-to-right */     /* This property was not listed in the homework-31style.css */
+	justify-content  : space-between; /* 1.3.3 space between */
+	margin           : 0px 10px 10px 10px;
+	}
+
+/**********************************************************/
+/* 1.4 Specify navigation layout - MAKE NO CHANGES!       */
+/**********************************************************/
+nav {
+	height            : 25px;
+	align-items       : center;
+	}
+nav ul {
+	margin            : 0;
+	padding           : 0;
+	display           : flex;
+	}
+nav li {
+	height            : 20px;
+	list-style        : none;
+	margin-right      : 1px; /* Background bleed-through */
+	}
+nav a {
+	padding           : 5px 20px;
+	font-size         : 1.1em;
+	font-weight       : bold;
+	text-decoration   : none;
+	}
+
+/**********************************************************/
+/* 1.5 Specify content, section, article and aside layout */
+/**********************************************************/
+main {
+	display           : flex;
+	margin            : 0 1px; 
+	align-items       : top;
+	}
+p {
+	padding           : 0 10px;
+	}
+#content {
+	display          : flex;
+	flex-direction   : row; /* 1.5.1 left-to-right  */ /* This content was not listed in the homework-31style.css */
+}
+section, aside {
+	display         : flex;
+	flex-direction  : column;/* 1.5.2 Top-to-bottom */
+	padding         : 5px 10px;
+	vertical-align	 :top; 
+	padding 		 : 0 10px; 
+	}
+section {
+	width           : 80%;
+	vertical-align	 :top; 
+	padding 		 : 0 10px; 
+	}
+.article-contents {
+	display           : flex;
+	flex-direction    : row; /* Horizontal layout */
+	}
+article {
+	padding         : 0 10px;
+	vertical-align	 :top; 
+	padding 		 : 0 10px; 
+	}
+/* Specify how to display article image               */
+article figure img{
+	border           : 1px solid #aaa;
+	padding          : 5px;
+	background-color : white;
+	}
+figcaption {
+	text-align        : center;
+	}
+aside ul {
+	margin            : 0 10px;
+	padding           : 0;
+	}
+aside li {
+	list-style        : none;
+	margin-bottom     : 10px;
+	}
+
+/**********************************************************/
+/* 1.6 Specify footer layout                              */
+/**********************************************************/
+footer {
+	margin            : 0 auto;
+	padding           : 0 10px;
+	display           : flex;
+	flex-direction    : row;/* 1.6.1 Left-to-right */
+	justify-content   : space-between;/* 1.6.2 Space between */
+	align-content     : center;/* 1.6.3 Center        */
+	}
+
+/**********************************************************/
+/* PART 2 - BORDERS                                       */
+/**********************************************************/
+
+section {
+	border-right      : 1px dotted #ccc;
+	vertical-align	 :top; 
+	padding 		 : 0 10px; 
+	}
+
+/***************************************************************************/	
+/* PART 2 - COLORS                                                         */
+/*                                                                         */
+/* 3 New CSS Features to Learn in 2017: Native Variables, 2017-01-10,      */
+/* https://bitsofco.de/3-new-css-features-to-learn-in-2017/                */
+/***************************************************************************/
+
+:root {
+	--color-0         : #9CC5DE  ; /* Paletton color 0 */
+	--color-1         : #F4FAFE ; /* Paletton color 1 */
+	--color-2         : #CBE4F2 ; /* Paletton color 2 */
+	--color-3         : #6EA2C1; /* Paletton color 3 */
+	--color-4         : #467D9E; /* Paletton color 4 */
+	--color-b         : #000000; /* black */
+	--color-w         : #FFFFFF; /* white */
+	--color-g         : #CCCCCC; /* gray  */ 
+}
+
+body {
+	background-color  : var(--color-4); /* color-4 */
+	}
+#container {
+	background-color  : var(--color-w); /* White; */
+	color             : var(--color-b);  /* Black; */
+	}
+header, footer {
+	background-color  : var(--color-0); /* color-0 */
+	color             : var(--color-1); /* color-1 */
+	}
+nav a {
+	background-color  : var(--color-1); /* color-1 */
+	color             : var(--color-4); /* color-4 */
+	}	
+body#home_page  a.home_page,
+body#about_me   a.about_me,
+body#my_courses a.my_courses,
+body#contact_me a.contact_me {
+	background-color : var(--color-3); /* color-3 */
+	color            : var(--color-1); /* color-1 */
+	}
+article {
+	background-color  : var(--color-1); /* color-1 */
+	color             : var(--color-4); /* color-4 */
+	vertical-align	 :top; 
+	padding 		 : 0 10px; 
+	}
+img {
+	background-color : var(--color-2); /* color-2 */
+	border-color     : var(--color-w);  /* White   */
+	border-style     : solid;
+	border-width     : 5px;
+	}
+footer span {
+	background-color  : var(--color-1); /* color-1 */
+	color             : var(--color-4); /* color-4 */
+	}
+
+/***************************************************************************/	
+/* Borders                                                                 */
+/***************************************************************************/
+
+header {border-bottom                  : 1px solid  var(--color-g); } /* gray */
+section {border-right                  : 1px dotted var(--color-g); } /* gray */
+section article, aside article {border : 1px solid  var(--color-g); } /* gray */
+footer {border-top                     : 1px solid  var(--color-g); } /* gray */
+img {border                            : 5px solid  var(--color-w); } /* white */
+video {border                          : 5px solid  var(--color-g);} /* gray */
+#video_artical {text-align			   : center;}
